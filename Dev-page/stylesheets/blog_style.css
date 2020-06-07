@@ -1,0 +1,100 @@
+@font-face {
+  font-family: 'ZillaSlab';
+  src: url('./fonts/zilla/woff/ZillaSlab-Regular.woff') format('woff');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ZillaSlab';
+  src: url('./fonts/zilla/woff/ZillaSlab-RegularItalic.woff') format('woff');
+  font-style: italic;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'ZillaSlab';
+  src: url('./fonts/zilla/woff/ZillaSlab-Bold.woff') format('woff');
+  font-style: bold;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'ZillaSlab-Highlight';
+  src: url('./fonts/zilla/woff/ZillaSlabHighlight-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: 700;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header-container {
+  color: #fff;
+  height: 100pt;
+  width: 900px;
+  background-color: white;  /* Blue */
+  padding: 10px 20px 10px 20px;
+  border: 1px solid white;  /* For debugging */
+  display: flex;
+  justify-content: space-between;
+  }
+
+.header-logo {
+  border: 1px solid white;  /* For debugging */
+  width:450px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.header-menu {
+  font-family: 'ZillaSlab';
+  font-size: 11pt;
+  font-weight: bold;
+  width: 250px;
+  color: black;
+  border: 1px solid white;  /* For debugging */
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.master-container {
+  width:100%;
+  max-width:900px;
+  border:0px;
+  border-spacing:0px;
+  border-collapse:separate;
+  margin-right:auto;
+  margin-left:auto;
+}
+
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;  /* For debugging */
+  font-family: 'ZillaSlab';
+  font-size: 18pt;
+  font-weight: bold;
+  padding: 40px 20px 20px 20px;
+}
+
+.blog-content {
+  padding: 40px 20px 20px 20px;
+  display: flex;
+  font-family: 'ZillaSlab';
+  font-size: 14pt;
+  font-weight: normal;
+  border: 1px solid white;  /* For debugging */
+  flex-direction: column;
+}
+
+.blog-content-sub {
+  padding: 20px 20px 20px 40px;
+  display: flex;
+  font-family: 'ZillaSlab';
+  font-size: 11pt;
+  font-weight: normal;
+  border: 1px solid white;  /* For debugging */
+}
