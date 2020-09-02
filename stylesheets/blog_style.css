@@ -39,6 +39,8 @@
   border: 1px solid white;  /* For debugging */
   display: flex;
   justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  flex-flow: row wrap;
   }
 
 .header-logo {
@@ -61,6 +63,7 @@
 }
 
 .master-container {
+  display:flex;
   width:100%;
   max-width:900px;
   border:0px;
@@ -68,6 +71,7 @@
   border-collapse:separate;
   margin-right:auto;
   margin-left:auto;
+  flex-direction: column;
 }
 
 .blog-container {

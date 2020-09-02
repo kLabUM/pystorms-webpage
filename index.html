@@ -1,141 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>pystorms</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./style/css/bootstrap.css">
-  <link rel="stylesheet" href="./style/css/bootstrap-social-gh-pages/bootstrap-social.css">
-  <link rel="stylesheet" href="./style/css/site_bootstrap.css">
-  <script src="./js/bootstrap.js"></script>
-</head>
+<html lang='en'> <!-- Opening Tag -->
+	<head>
+    		<!-- Metadata goes here -->
+		<meta charset='UTF-8'/>
+    		<link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+    		<title>pystorms</title>
+		<meta name="author" content="Abhiram Mullapudi">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
 
-<body>
 
-<!--   Navigation Bar TODO: Add a logo -->
-<nav class="navbar sticky-top navbar-expand-sm order-3 navbar-custom">
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="./docs/build/html/index.html" target="_blank"> <strong>Documentation</strong> </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#contact"> <strong>Contact</strong></a>
-      </li>
-    </ul>
-  </div>  
-</nav>
+	<body>
+		<div class="master-container">
+    		<!-- Content -->
+    		<!-- Header -->
+		<div class='header-container'>
+      			<div class='header-logo'>
+				<div class='logo'><img src='./images/OS-black.png' style="height:20%;width:20%" alt="Random Storms Logo"/></div>
+      			</div>
+			<div class='header-menu'>
+				<div class='documentation'><a href="./docs/build/html/Home.html" style="color:black" target="_blank">docs</a></div>
+				<div class='manuscript'><a href="" style="color:black">manuscript</a></div>
+				<div class='repo'><a href="https://github.com/kLabUM/pystorms" style="color:black" target="_blank">repo</a></div>
+				<div class='about'><a href="#about" style="color:black">about us</a></div>
+			</div>
+    		</div>
+		<!-- What is pystorms ?-->
+		<div class='content-container'>
+			<h1> pystorms </h1>
+			<h2> A simulation sandbox for the development and evaluation of stormwater control algorithms </h2>
+			<br>
+			<p style="padding-bottom: 0px;padding-top: 5px;font-size: 12pt;">
+			Welcome! We’ve developed pystorms with the objective of making the research of stormwater control more accessible.
+			This open-source python package provides a curated collection of diverse stormwater networks and rain events, coupled with a streamlined programming interface and a stormwater simulator to provide a standalone package for developing and evaluating stormwater control algorithms.
+			Please refer to the manuscript for more details on the motivation behind this effort.
+			</p>
 
-<div class="container-fluid" id="jumbotron-header">
-  &nbsp;
-  <h1 align="center">pystorms : Simulation sandbox for the evaluation and control of stormwater networks</h1>
-  <h5 align="center">⚔️ Want to know how your control algorithm stacks up against others in smart stormwater systems? ⚔️</h5>
-  &nbsp;
-</div>
-
-<div class="container-fluid">
-<div class="row align-items-center">
-<!--<div class="col mx-auto">-->
-<div class="col-4">
-<div class="container-fluid">
-  &nbsp;
-  <img class="abstract-img" src="./images/graphicalAbstract.png" alt="">
-  &nbsp;
-</div>
-</div>
-<!-- <div class="col mx-auto"> -->
-<div class="col">
-<div id="caro_contain" class="container-fluid">
-        <div class="mx-auto" style="width: 100%">
-                <div id="carousel_networks" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                          <li data-target="#carousel_networks" data-slide-to="0" class="active"></li>
-                          <li data-target="#carousel_networks" data-slide-to="1"></li>
-                          <li data-target="#carousel_networks" data-slide-to="2"></li>
-                          <li data-target="#carousel_networks" data-slide-to="3"></li>
-                          <li data-target="#carousel_networks" data-slide-to="4"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img class="img-fluid" id="carousel-img" src="./images/network_alpha.png" alt="Scenario Alpha">
-                            <div id="caption_font" class="carousel-caption d-none d-md-block">
-                              <h5>Scenario alpha</h5>
-                              <p>A combined sewer network (0.12 sq km) aiming to minimize combined sewer overflows.</p>
-                            </div>
-                          </div>
-                          <div class="carousel-item">
-                            <img class="img-fluid" id="carousel-img" src="./images/network_beta.png" alt="Scenario Beta">
-                            <div id="caption_font" class="carousel-caption d-none d-md-block">
-                              <h5>Scenario beta</h5>
-                              <p>A separated sewer network (1.3 sq km) with a tidally-influenced receiving river.</p>
-                            </div>
-                          </div>
-                          <div class="carousel-item">
-                            <img class="img-fluid" id="carousel-img" src="./images/network_gamma.png" alt="Scenario Gamma">
-                            <div id="caption_font" class="carousel-caption d-none d-md-block">
-                              <h5>Scenario gamma</h5>
-                              <p>A highly urban separated sewer network (4 sq km) with thresholds on channel flows to avoid erosion.</p>
-                            </div>
-                          </div>
-                          <div class="carousel-item">
-                            <img class="img-fluid" id="carousel-img" src="./images/network_delta.png" alt="Scenario Delta">
-                            <div id="caption_font" class="carousel-caption d-none d-md-block">
-                              <h5>Scenario delta</h5>
-                              <p>A combined sewer network (1.7 sq km) in which control assets serve as both aesthetic and flow control objectives.</p>
-                            </div>
-                          </div>
-                          <div class="carousel-item">
-                            <img class="img-fluid" id="carousel-img" src="./images/network_epsilon.png" alt="Scenario Epsilon">
-                            <div id="caption_font" class="carousel-caption d-none d-md-block">
-                              <h5>Scenario epsilon</h5>
-                              <p>A combined sewer network (67 sq km) with a focus on water quality objectives.</p>
-                            </div>
-                          </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carousel_networks" role="button" data-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carousel_networks" role="button" data-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Next</span>
-                        </a>
-                 </div>
-              </div>
-</div>
-</div>
-</div>
-</div>
-<div class="container-fluid" id="getting_Started">
-  <p class="text-justify"><br>Welcome! We have built this library to encourage more researchers to have access to smart stormwater control problems. We want these problems accessible to all populations of researchers &mdash; those with experience in controls, but not stormwater; those with experience in stormwater, but not controls; and those without prior experience in either! We have streamlined all of the backend details of running a smart stormwater control problem so that all you have to do is focus on the control algorithm (see below for an example).</p>
-</div>
-&nbsp;
-
-<div class="container-fluid" id="getting_Started">
-  <h2 align="center"><strong>Getting Started</strong></h2>
-  <p class="text-justify">To try out how exactly to interact with stormwater networks using our toolbox, we encourage you to first begin with our "toy control problem" which you can access <strong><a href="./build/html/ScenarioTheta.html">here</a> </strong>. Once you feel comfortable with how our toolbox works, we then encourage you really begin to have some fun by interacting with our five benchmarking scenarios: <span style="font-family: courier; font-weight: bold">alpha</span>, <span style="font-family: courier; font-weight: bold">beta</span>, <span style="font-family: courier; font-weight: bold">gamma</span>, <span style="font-family: courier; font-weight: bold">delta</span>, and <span style="font-family: courier; font-weight: bold">epsilon</span>. These benchmarking scenarios are built using real-world inspired stormwater networks, driving events, and control assets.
-  <br><br>
-  To learn more about this work, check out our github repository:
-  <br>
-  <center><a href="https://github.com/kLabUM/pystorms" target="_blank"><img src="./images/logo_github.svg" alt="kLabUM/Benchmarking" height="50px"></a></center>
-  <br>
-  To install and begin working, use:
-  <br>
-  </p>
-  <div class="alert alert-secondary" role="alert">
-    pip install pystorms
-  </div>
-  <p class="text-justify">This is how one would go about running a scenario ...</p>
-    <!-- HTML generated using hilite.me -->
-    <div style="background: #ffffff;
-     overflow:auto;
-     width:auto;
-     border:solid gray;
-     border-width:.1em .1em .1em .8em;
-     padding:.2em .6em;
-     ">
-     <pre style="margin: 0;
-      line-height: 125%">
+			<h3> Getting Started </h3>
+			<p style="font-size: 12pt;">
+			<em> pystorms </em> is available on pypi and can be directly installed using pip.
+			It is supported on OSX, Linux, and Windows.
+			<em> pystorms </em> requires python(3+), pyswmm(&ge; 0.6.0), numpy(&ge; 18.4), and PyYAML(&ge; 5.3).
+			Please raise an issue on the repository or reach out if you encounter any installation issues.
+			</p>
+			<br>
+			<pre style="padding-bottom: 1px;padding-top: 1px; background-color: #f6f5f5;border-radius: 5px;"><code> pip install pystorms</code></pre>
+			<br>
+			<p style="font-size: 12pt;">
+			In <em> pystorms </em>, control of stormwater networks is abstracted as scenarios, named after letters from Greek alphabet. 
+			</p>
+			<br>
+    <div style="background: #ffffff;overflow:auto;width:auto;padding:.2em .6em;font-family: Consolas;background-color: #f6f5f5;border-radius: 5px;">
+<pre style="margin: 0;line-height: 125%">
 <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">pystorms</span>
 
 <span style="color: #008800; font-weight: bold">def</span> controller(state):
@@ -144,83 +60,61 @@
     """</span>
     <span style="color: #008800; font-weight: bold">return</span> actions
 
-env = pystorms.scenarios.alpha()
+env = pystorms.scenarios.theta()
 done = <span style="color: #007020">False</span>
 
 <span style="color: #008800; font-weight: bold">while</span> <span style="font-weight: bold">not</span> done:
     state = env.state()
     actions = controller(state)
     done = env.step(actions)
-</pre></div></div>
-<br>
-<div class="container-fluid" id="getting_Started">
-  <p>For more technical details on what we have developed, and why, please check out our <strong>documentation</strong>.</p>
-  <h2 align="center"><strong>Contributing</strong></h2>
-  <p class="text-justify">If you want to be more involved, please consider the following:
-  <ul class="contrib">
-    <li class="contrib_li">Submit some of your own scenarios to our toolbox! We are looking to expand this library to include far more networks/scenarios with more diverse control needs and that have been implemented with a variety of different hydraulic simulators.</li>
-    <li class="contrib_li">Download our code and hack into it for whatever other needs you may have! We have built this toolbox to be 100% open-source, so if you want to use it for any other application or need that you see fit, by all means, have at it. While the scenarios were built specifically for direct algorithm performance, we have also provided libraries of many other driving events so that you can customize your own research problem.</li>
-    <li class="contrib_li">Continue to follow our work! In the future we plan to (a) develop competitions for novel smart stormwater control problems, and (b) present solutions that have been submitted to us for the scenarios we have developed so you can see how your results perform against others.</li>
-    <li class="contrib_li">Check out our other open-source efforts, including <a href="http://open-storm.org/" target="_blank"><strong>open-storm.org</strong></a>, where we have built open-source sensor nodes for smart stormwater testing and deployment.</li>
-  </ul>
-</p>
-</div>
-&nbsp;
+</pre></div>
+			<br>
+			<p style="font-size: 12pt;">
+			Scenario theta is a synthetic example for prototyping control algorithms.
+			Six other scenarios inspired from real-world stormwater are included to provide realistic examples for evaluating stormwater control algorithms.
+			Please refer to the <a href="./docs/build/html/Home.html" style="color: #003153" target="_blank">documentation</a> for more details.
+			</p>
 
-<div class="container-fluid" id="testimonials">
-  <h2 align="center"><strong>Testimonials</strong></h2><br>
-  <div class="row">
-    <div class="col mx-auto">
-      <img class="mx-auto d-block" src="./images/testimonial_venant.png" alt="" height="250px">
-    </div>
-    <div class="col mx-auto">
-      <img class="mx-auto d-block" src="./images/testimonial_vonNeumann.png" alt="" height="250px">
-    </div>
-    <div class="col mx-auto">
-      <img class="mx-auto d-block" src="./images/testimonial_lovelace.png" alt="" height="250px">
-    </div>
-<!-- <div class="col mx-auto">
-      <img class="mx-auto d-block" src="./images/testimonial_famous.png" alt="" height="250px">
-    </div> -->
-  </div>
-</div>
-&nbsp;
+			<h3> Get Involved </h3>
+			<p style="font-size: 12pt;">
+			If you want to be more involved, please consider the following:
+			</p>
+			  <ul>
+  				<li>Submit some of your own scenarios to our repository! We are looking to expand this package to include far more networks/scenarios with more diverse control needs and that have been implemented with a variety of different hydraulic simulators.</li>
+  				<li>Download our code and hack into it for whatever other needs you may have! We have built this package to be 100% open-source, so if you want to use it for any other application or need that you see fit, by all means, have at it. While the scenarios were built specifically for direct algorithm performance, we have also provided libraries of many other driving events so that you can customize your own research problem.</li>
+    				<li>Check out our other open-source efforts, including <a href="http://open-storm.org/" style="color: #003153" target="_blank">open-storm.org</a>, where we have built open-source sensor nodes for smart stormwater testing and deployment.</li>
+  			  </ul>
 
-<div class="container-fluid" id="universities">
-  <h2 align="Left"><strong>Partnering Institutions</strong></h2><br>
-  <div class="row">
-    <div class="col mx-auto">
-      <a href="https://umich.edu/" target="_blank"><img class="mx-auto d-block" src="./images/partner_umich.png" alt="University of Michigan" height="100px"></a>
-    </div>
-    <div class="col mx-auto">
-      <a href="http://www.virginia.edu/" target="_blank"><img class="mx-auto d-block" src="./images/partner_uva.png" alt="University of Virginia" height="100px"></a>
-    </div>
-    <div class="col mx-auto">
-      <a href="https://www.emnet.net/" target="_blank"><img class="mx-auto d-block" src="./images/partner_emnet.png" alt="Emnet, LLC" height="120px"></a>
-    </div>
-    <div class="col mx-auto">
-      <a href="https://www.utk.edu/" target="_blank"><img class="mx-auto d-block" src="./images/partner_utk.png" alt="University of Tennessee, Knoxville" height="100px"></a>
-    </div>
-    <div class="col mx-auto">
-      <a href="http://open-storm.org/" target="_blank"><img class="mx-auto d-block" src="./images/openstorm_b.png" alt="open-storm.org" height="100px"></a>
-    </div>
-  </div>
-</div>
-&nbsp;
+			<h3> Testimonials </h3>
+			<div class="testimonials">
+				<img src='./images/testimonial_famous.png' style="height:23%;width:23%" alt="famous">
+				<img src='./images/testimonial_lovelace.png' style="height:23%;width:23%" alt="lovelace">
+				<img src='./images/testimonial_venant.png' style="height:23%;width:23%" alt="venant">
+				<img src='./images/testimonial_vonNeumann.png' style="height:23%;width:23%" alt="vonNeu">
+			</div>
 
-<div class="container-fluid" id="funding">
-  <h2 align="Left"><strong>Funding Sources</strong></h2>
-  <div class="row">
-    <div class="col mx-auto">
-      <a href="http://glpf.org/" target="_blank"><img class="mx-auto d-block" src="./images/funding_GLPF.jpg" alt="GLPF" height="100px"></a>
-    </div>
-    <div class="col mx-auto">
-      <a href="http://www.nsf.gov/" target="_blank"><img class="mx-auto d-block" src="./images/funding_NSF.png" alt="NSF" height="140px"></a>
-    </div>
-  </div>
-</div>
-&nbsp;
+			<h3 id="about"> About us </h3>
+			<p style="font-size: 12pt;">
+			pystorms is developed by the open-storm group, a consortium of universities and industry partners developing open-source solutions for smarter stormwater systems.
+			</p>
+			<br>
+			<div class="testimonials" style="padding-bottom: 5px;padding-top: 5px;">
+				<a href="https://umich.edu/" target="_blank"><img src="./images/partner_umich.png" alt="University of Michigan" style="height:90pt"></a>
+				<a href="http://www.virginia.edu/" target="_blank"><img src="./images/partner_uva.png" alt="University of Virginia" style="height:90pt"></a>
+				<a href="https://www.utk.edu/" target="_blank"><img  src="./images/partner_utk.png" alt="University of Tennessee, Knoxville"  style="height:90pt"></a>
+				<a href="https://www.emnet.net/" target="_blank"><img src="./images/partner_emnet.png" alt="Emnet, LLC"  style="height:90pt"></a>
+			</div>
 
-</body>
-</html>
+		</div>
 
+    		</div>
+		<br>
+		<hr/>
+		<div class='footer-container'>
+		<p style="font-size:small;padding-top:px;">
+		Font design and elements inspired from  <a href="https://www.johnsonbanks.co.uk/work/mozilla"> Johnson Banks/<em>mozilla</em></a>, <a href="https://mathpix.com"> mathpix</a>, and <a href="https://edwardtufte.github.io/tufte-css/"> Dave Liepmann </a>
+		</p>
+		</div>
+
+	</body>
+</html> <!-- Closing Tag -->

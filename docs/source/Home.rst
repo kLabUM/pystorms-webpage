@@ -1,18 +1,6 @@
 |:cloud_with_lightning_and_rain:| |:cloud_with_lightning_and_rain:| Welcome to the ``pystorms`` |:cloud_with_lightning_and_rain:| |:cloud_with_lightning_and_rain:|
 ===================================================================================================================================================================
 
-Smart Stormwater Systems
-------------------------
-
-Flooding is the leading cause of "natural disaster'' deaths worldwide.
-Simultaneously, untold quantities of metals, bacteria, nutrients, and other pollutants are washing-off during storms into our streams and rivers.
-As a result, many parts of the world are dealing with chronically impaired coastlines due to algal blooms and other ecological disasters.
-Many of these challenges are presently addressed through classic approaches and new infrastructure construction (larger pipes, bigger basins, storage tanks, etc.).
-
-Instead of building more, there is now an unprecedented opportunity to use internet-of-things and cyber-physical technologies to embed water systems with intelligence.
-The Internet-connected water systems of the future will control themselves (gates, valves, pumps), similar to self-driving cars, to reduce flooding and improve water quality.
-However, there is a dire need for more researchers to help enable the next generation of data and control algorithms for smart water systems.
-
 What is pystorms?
 -----------------
 
@@ -32,8 +20,6 @@ This package is built in python 3.7 and is supported on all operating systems (W
 .. code:: bash
 
    pip install pystorms
-
-Before installation, we encourage users to consider setting up their Python environments using the ``virtualenv`` package for better management and organization of Python packages and libraries. Details on this package can be viewed `here <https://pypi.org/project/virtualenv/>`_ and `here <https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/>`_, with an additional tool called ``virtualenvwrapper`` available `here <https://pypi.org/project/virtualenvwrapper/>`_.
 
 If you run into any issues installing the package, please refer to the advanced section for additional installation instructions or feel free to contact us.
 
@@ -74,14 +60,14 @@ We break the above code snippet into three parts:
 
   For the example above, the scenario class is defined using the default precipitation event and control objective of the theta scenario; it is defined fully by the following line of code: :code:`env = pystorms.scenarios.theta()`).
 
-(2) Delineate a simulation
+  (2) Delineate a simulation
   A **simulation** for the scenario is then delineated using the method calls of the scenario class (i.e. :code:`env` in this example). For ``pystorms`` the method calls of the scenario class were defined to follow the typical actions that occur in-situ for *actual* control systems. Namely, there are two specific components: (i) querying the state of the system, and (ii) implementing control actions based on the system's state.
 
     i. States in the stormwater network (e.g. water levels, flows, pollutant concentrations) can be queried at any point of the simulation using the :code:`env.state()` method.
 
     ii. Control actions can be implemented in the network, and the simulation can be progressed forward for a specified time-step using the :code:`env.step(<your actions here>)` call. Please refer to the scenarios section for more information.
 
-(3) Implementing the control algorithm
+        (3) Implementing the control algorithm
   The simulation set up in this way eases the ability to explicitly segregate the **control algorithm** that determines what control actions are to be implemented. By separating out the control algorithm in this way, the user is able to focus on testing various control strategies and their computational implementation via their algorithms.
 
   As can be seen by the case provided here, the control algorithm is such that all settings corresponding to the control assets are set to ``1.0`` (the proportional equivalent of ``100%``). If the states at either of the state locations read greater than ``0.5``, then the corresponding control asset setting is changed to ``0.5``. (The details of what physical parameters the state and control setting values correspond to are discussed in the Scenario Theta section).
@@ -112,21 +98,6 @@ While ``pystorms`` can be used freely, we ask that the origins of this tool be c
         series = {ICCPS ’19}
         }
 
-
-
-
-
-
-Research using pystorms
------------------------
-
-1. Sara C. Troutman, Nancy G. Love, and Branko Kerkez. Balancing water quality and flows incombined sewer systems using real-time control. *Environ. Sci.: Water Res. Technol* (2020)
-
-
 License
 -------
-``pystorms`` is licensed under a GNU General Public License.
-
-.. image:: ./figures/gplv3-or-later.svg
-  :width: 100
-  :align: left
+``pystorms`` is licensed under a GNU General Public License (v3).  `Quick Summary of GNU v3 <https://tldrlegal.com/license/gnu-general-public-license-v3-(gpl-3)>`_: *You may copy, distribute and modify the software as long as you track changes/dates in source files. Any modifications to or software including (via compiler) GPL-licensed code must also be made available under the GPL along with build & install instructions.*
