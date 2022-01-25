@@ -23,7 +23,7 @@ copyright = "2049"
 author = "Abhiram Mullapudi, Sara P. Rimer, Sara C. Troutman"
 
 # The full version, including alpha/beta/rc tags
-release = "0.0.2"
+release = "0.6.0"
 
 
 # -- General configuration ---------------------------------------------------

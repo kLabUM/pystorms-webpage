@@ -60,14 +60,14 @@ We break the above code snippet into three parts:
 
   For the example above, the scenario class is defined using the default precipitation event and control objective of the theta scenario; it is defined fully by the following line of code: :code:`env = pystorms.scenarios.theta()`).
 
-(2) Delineate a simulation
+  (2) Delineate a simulation
   A **simulation** for the scenario is then delineated using the method calls of the scenario class (i.e. :code:`env` in this example). For ``pystorms`` the method calls of the scenario class were defined to follow the typical actions that occur in-situ for *actual* control systems. Namely, there are two specific components: (i) querying the state of the system, and (ii) implementing control actions based on the system's state.
 
     i. States in the stormwater network (e.g. water levels, flows, pollutant concentrations) can be queried at any point of the simulation using the :code:`env.state()` method.
 
     ii. Control actions can be implemented in the network, and the simulation can be progressed forward for a specified time-step using the :code:`env.step(<your actions here>)` call. Please refer to the scenarios section for more information.
 
-(3) Implementing the control algorithm
+        (3) Implementing the control algorithm
   The simulation set up in this way eases the ability to explicitly segregate the **control algorithm** that determines what control actions are to be implemented. By separating out the control algorithm in this way, the user is able to focus on testing various control strategies and their computational implementation via their algorithms.
 
   As can be seen by the case provided here, the control algorithm is such that all settings corresponding to the control assets are set to ``1.0`` (the proportional equivalent of ``100%``). If the states at either of the state locations read greater than ``0.5``, then the corresponding control asset setting is changed to ``0.5``. (The details of what physical parameters the state and control setting values correspond to are discussed in the Scenario Theta section).

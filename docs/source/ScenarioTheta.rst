@@ -1,5 +1,5 @@
-Scenario Theta
-==============
+Example: Scenario Theta
+=======================
 
 This scenario was created to serve as a unit test for control algorithms.
 In this scenario, two idealized basins (in parallel) of :math:`1000m^3` are draining into a downstream water body. 

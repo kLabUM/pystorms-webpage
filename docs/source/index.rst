@@ -18,12 +18,6 @@ Welcome to ``pystorms`` documentation!
    
    Scenarios
    ScenarioTheta
-   ScenarioAlpha
-   ScenarioBeta
-   ScenarioGamma
-   ScenarioDelta
-   ScenarioEpsilon
-
 
 .. toctree::
    :maxdepth: 2
@@ -41,14 +35,6 @@ Welcome to ``pystorms`` documentation!
    :caption: Examples:
 
    Multiprocessing
-   InfluxGrafana
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Development:
-
-   roadmap
-
 
 Indices and tables
 ==================
