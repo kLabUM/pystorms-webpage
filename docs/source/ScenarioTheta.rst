@@ -72,50 +72,56 @@ example, we will design a simple algorithm that achives this.
 
 .. code:: ipython3
 
-    def controller(state, target, MAX=2.0):
-        fd = state / MAX
-        avg_fd = np.mean(fd)
-        potential = fd - avg_fd  # [<0, 0, <1]
-    
-        for i in range(0, 2):
-            if potential[i] < -0.001:
-                potential[i] = 0.0
-            elif potential[i] < 0.001 and potential[i] > -0.001:
-                potential[i] = avg_fd
-    
-        if sum(potential) > 0.0:
-            potential = potential / sum(potential)
-    
-        actions = np.zeros(2)
-        if state[0] > 0.00:
-            flow0 = target * potential[0]
-            actions[0] = min(1.0, flow0 / (1.00 * np.sqrt(2.0 * 9.81 * state[0])))
-        if state[1] > 0.00:
-            flow1 = target * potential[1]
-            actions[1] = min(1.0, flow1 / (1.00 * np.sqrt(2.0 * 9.81 * state[1])))
-        return actions
+        def controller(depths,
+                       N=2,
+                       LAMBDA=0.5,
+                       MAX_DEPTH=2.0):
+            
+            # Compute the filling degree
+            f = depths/MAX_DEPTH
+            
+            # Estimate the average filling degree
+            f_mean = np.mean(f)
+            
+            # Compute psi
+            psi = np.zeros(N)
+            for i in range(0, N):
+                psi[i] = f[i] - f_mean
+                if psi[i] < 0.0 - 10**(-4):
+                    psi[i] = 0.0
+                elif psi[i] >= 0.0 - 10**(-4) and psi[i] <= 0.0 + 10**(-4):
+                    psi[i] = f_mean
+            
+            # Assign valve positions
+            actions = np.zeros(N)
+            for i in range(0, N):
+                if depths[i] > 0.0:
+                    k = 1.0/np.sqrt(2 * 9.81 * depths[i])
+                    action = k * LAMBDA * psi[i]/np.sum(psi)
+                    actions[i] = min(1.0, action)
+            return actions
 
 .. code:: ipython3
 
-    env_controlled = pystorms.scenarios.theta()
-    done = False 
-    while not done:
-        state = env_controlled.state()
-        actions = controller(state, 0.50)
-        done = env_controlled.step(actions)
+            env_controlled = pystorms.scenarios.theta()
+            done = False 
+            while not done:
+                state = env_controlled.state()
+                actions = controller(state, 0.50)
+                done = env_controlled.step(actions)
 
 .. code:: ipython3
 
-    plt.plot(env_controlled.data_log["flow"]["8"], label="Controlled")
-    plt.plot(env.data_log["flow"]["8"], label="Uncontrolled")
-    plt.ylabel("Outflows")
-    plt.legend()
+            plt.plot(env_controlled.data_log["flow"]["8"], label="Controlled")
+            plt.plot(env.data_log["flow"]["8"], label="Uncontrolled")
+            plt.ylabel("Outflows")
+            plt.legend()
 
 .. image:: figures/theta_controlled.png
 
 .. code:: ipython3
 
-    print("Controlled performance: {} \nUncontrolled performance: {}".format(env_controlled.performance(), env.performance()))
+            print("Controlled performance: {} \nUncontrolled performance: {}".format(env_controlled.performance(), env.performance()))
 
 .. parsed-literal::
 
