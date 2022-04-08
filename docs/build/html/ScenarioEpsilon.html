@@ -1,90 +1,182 @@
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scenario Epsilon &mdash; pystorms 0.6.0 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="_static/js/theme.js"></script>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Scenario Epsilon &#8212; pystorms 0.6.0 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
-</head>
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> pystorms
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Home.html">⛈ ⛈ Welcome to the <code class="docutils literal notranslate"><span class="pre">pystorms</span></code> ⛈ ⛈</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Scenarios:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Scenarios.html">Scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ScenarioTheta.html">Example: Scenario Theta</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Advanced:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="StateVectors.html">Defining States</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PyswmmFeatures.html"><code class="docutils literal notranslate"><span class="pre">pyswmm</span></code> functionality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BuildingScenarios.html">Building Custom Scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Examples:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Multiprocessing.html">Multi-processing</a></li>
-</ul>
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
 
-        </div>
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="index.html">
+<p class="title">pystorms</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="GettingStarted.html">
+  Welcome to the
+  <code class="docutils literal notranslate">
+   <span class="pre">
+    pystorms
+   </span>
+  </code>
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Scenarios.html">
+  Scenarios
+ </a>
+</li>
+
+    
+</ul>
       </div>
-    </nav>
+      
+    </div>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">pystorms</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Scenario Epsilon</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="_sources/ScenarioEpsilon.rst.txt" rel="nofollow"> View page source</a>
-      </li>
-  </ul>
-  <hr/>
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/kLabUM/pystorms" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#control-objective">
+   Control Objective
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#observable-states">
+   Observable States
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#controllable-assets">
+   Controllable assets
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
   <section id="scenario-epsilon">
-<h1>Scenario Epsilon<a class="headerlink" href="#scenario-epsilon" title="Permalink to this headline"></a></h1>
+<h1>Scenario Epsilon<a class="headerlink" href="#scenario-epsilon" title="Permalink to this headline">#</a></h1>
 <p>This scenario is based on a real world-inspired combined sewer network.
 There are 11 in-line storage dams that lie in the sewer pipes with
 varying diameters (min: 2.74 <span class="math notranslate nohighlight">\(m\)</span>, max: 4.72 <span class="math notranslate nohighlight">\(m\)</span>); these dams
@@ -99,7 +191,7 @@ subcatchment. The wastewater flows follow a repeating pattern:</p>
 <figure class="align-default" id="id1">
 <img alt="title" src="_images/epsilon_ww_flow_tss.png" />
 <figcaption>
-<p><span class="caption-text">title</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-text">title</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The magnitude of flow (scaled from the normalized flow shown here) is
@@ -124,18 +216,18 @@ time series for each of the gauges.</p>
 <figure class="align-default" id="id2">
 <img alt="title" src="_images/epsilon_precip.png" />
 <figcaption>
-<p><span class="caption-text">title</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-text">title</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="control-objective">
-<h2>Control Objective<a class="headerlink" href="#control-objective" title="Permalink to this headline"></a></h2>
+<h2>Control Objective<a class="headerlink" href="#control-objective" title="Permalink to this headline">#</a></h2>
 <p>The objective of this scenario is to maintain the TSS load at the outlet
 of the sewer network below a threshold of 1.05 <span class="math notranslate nohighlight">\(kg\)</span>
 <span class="math notranslate nohighlight">\(s^{-1}\)</span>, the maximum wastewater TSS load. This must be done while
 avoiding flooding.</p>
 </section>
 <section id="observable-states">
-<h2>Observable States<a class="headerlink" href="#observable-states" title="Permalink to this headline"></a></h2>
+<h2>Observable States<a class="headerlink" href="#observable-states" title="Permalink to this headline">#</a></h2>
 <p>At each of the 11 in-line storage dams, the following states are
 observable: - Outflow [<span class="math notranslate nohighlight">\(m^3\)</span> <span class="math notranslate nohighlight">\(s^{-1}\)</span>] - Water levels
 [<span class="math notranslate nohighlight">\(m\)</span>] - TSS concentrations [<span class="math notranslate nohighlight">\(kg\)</span> <span class="math notranslate nohighlight">\(m^{-3}\)</span>] - Valve
@@ -147,7 +239,7 @@ concentration [<span class="math notranslate nohighlight">\(kg/m^3\)</span>]</p>
 throughout the 40-day simulation.</p>
 </section>
 <section id="controllable-assets">
-<h2>Controllable assets<a class="headerlink" href="#controllable-assets" title="Permalink to this headline"></a></h2>
+<h2>Controllable assets<a class="headerlink" href="#controllable-assets" title="Permalink to this headline">#</a></h2>
 <p>All 11 in-line storage dams in network are controllable and are modeled
 as orifices that can be adjusted as a percentage of valve opening [0% to
 100%]. All dams are initially set to 100% open.</p>
@@ -155,31 +247,37 @@ as orifices that can be adjusted as a percentage of valve opening [0% to
 </section>
 
 
-           </div>
-          </div>
-          <footer>
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
 
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2049.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
       </div>
-    </section>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2049.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+</p>
+    </div>
+    
   </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
-</body>
+</footer>
+  </body>
 </html>
