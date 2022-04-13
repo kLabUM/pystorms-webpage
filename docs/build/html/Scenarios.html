@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Scenarios &#8212; pystorms 0.6.0 documentation</title>
+    <title>Scenarios &#8212; pystorms 1.0.0 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -29,12 +29,13 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="Development.html" />
-    <link rel="prev" title="Welcome to the pystorms" href="GettingStarted.html" />
+    <link rel="next" title="Building Custom Scenarios" href="building_scenarios.html" />
+    <link rel="prev" title="pystorms" href="getting_started.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -68,8 +69,7 @@
       <div class="navbar-center-item">
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="GettingStarted.html">
-  Welcome to the
+ <a class="reference internal nav-link" href="getting_started.html">
   <code class="docutils literal notranslate">
    <span class="pre">
     pystorms
@@ -81,6 +81,24 @@
 <li class="toctree-l1 current active nav-item">
  <a class="current reference internal nav-link" href="#">
   Scenarios
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="building_scenarios.html">
+  Building Custom Scenarios
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="advanced.html">
+  Advanced
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="contributing.html">
+  Contributing
  </a>
 </li>
 
@@ -97,6 +115,10 @@
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/kLabUM/pystorms" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
             <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://pypi.org/project/pystorms/" rel="noopener" target="_blank" title="PyPI"><span><i class="fas fa-box"></i></span>
+            <label class="sr-only">PyPI</label></a>
         </li>
       </ul>
       </div>
@@ -134,9 +156,56 @@
               
               <div class="toc-item">
                 
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scenarios-in-pystorms">
+   Scenarios in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pystorms
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebooks">
+   Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-scenario-theta">
+   Example: Scenario Theta
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objective">
+     Objective
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#states">
+     States
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#control-actions">
+     Control actions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-equal-filling-controller">
+     Example: Equal-filling Controller
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
 </nav>
               </div>
               
@@ -158,6 +227,8 @@
                 
   <section id="scenarios">
 <h1>Scenarios<a class="headerlink" href="#scenarios" title="Permalink to this headline">#</a></h1>
+<section id="scenarios-in-pystorms">
+<h2>Scenarios in <code class="docutils literal notranslate"><span class="pre">pystorms</span></code><a class="headerlink" href="#scenarios-in-pystorms" title="Permalink to this headline">#</a></h2>
 <p>Scenarios are the primary components of the <code class="docutils literal notranslate"><span class="pre">pystorms</span></code> library. These scenarios are designed to be used for quantitatively evaluating the performance of stormwater control algorithms.</p>
 <a class="reference internal image-reference" href="_images/fig_scenarioComponents.png"><img alt="_images/fig_scenarioComponents.png" class="align-center" src="_images/fig_scenarioComponents.png" style="width: 400px;" /></a>
 <dl class="simple">
@@ -172,7 +243,7 @@
 </dl>
 <p><code class="docutils literal notranslate"><span class="pre">pystorms</span></code> includes 7 scenarios with diverse set of objectives; these are summarized in the table below.</p>
 <table class="colwidths-given table" id="id1">
-<caption><span class="caption-text">Scenarios</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<caption><span class="caption-text">Scenarios included in pystorms</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 20%" />
 <col style="width: 40%" />
@@ -217,6 +288,131 @@
 </table>
 <p>Please refer to manuscript for additional details on the individual scenarios.</p>
 </section>
+<section id="jupyter-notebooks">
+<h2>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">#</a></h2>
+<p>We have included jupyter notebooks demonstrating the use of pystorms scenarios for testing control algorithms.</p>
+<ol class="arabic simple">
+<li><p>Theta: <a class="reference external" href="https://github.com/kLabUM/pystorms/blob/master/tutorials/Scenario_Theta.ipynb">Scenario theta</a></p></li>
+<li><p>Alpha: <a class="reference external" href="https://github.com/kLabUM/pystorms/blob/master/tutorials/Scenario_Alpha.ipynb">Scenario alpha</a></p></li>
+<li><p>Beta: <a class="reference external" href="https://github.com/kLabUM/pystorms/blob/master/tutorials/Scenario_Beta.ipynb">Scenario beta</a></p></li>
+<li><p>Gamma: <a class="reference external" href="https://github.com/kLabUM/pystorms/blob/master/tutorials/Scenario_Gamma.ipynb">Scenario gamma</a></p></li>
+<li><p>Delta: <a class="reference external" href="https://github.com/kLabUM/pystorms/blob/master/tutorials/Scenario_Delta.ipynb">Scenario delta</a></p></li>
+<li><p>Epsilon: <a class="reference external" href="https://github.com/kLabUM/pystorms/blob/master/tutorials/Scenario_Epsilon.ipynb">Scenario epsilon</a></p></li>
+<li><p>Zeta: <a class="reference external" href="https://github.com/kLabUM/pystorms/blob/master/tutorials/Scenario_Zeta.ipynb">Scenario zeta</a></p></li>
+</ol>
+<p>The following section outlines the use of scenario theta for evaluating equal-filling degree controller.</p>
+</section>
+<section id="example-scenario-theta">
+<h2>Example: Scenario Theta<a class="headerlink" href="#example-scenario-theta" title="Permalink to this headline">#</a></h2>
+<p>This scenario was created to serve as a unit test for control algorithms.
+In this scenario, two idealized basins (in parallel) of <span class="math notranslate nohighlight">\(1000m^3\)</span> are draining into a downstream water body.
+Outlets in the basins (<span class="math notranslate nohighlight">\(1m^2\)</span>) are at the bottom and can be controlled throughout the duration of the simulation.</p>
+<a class="reference internal image-reference" href="_images/theta.png"><img alt="_images/theta.png" class="align-center" src="_images/theta.png" style="width: 400px;" /></a>
+<section id="objective">
+<h3>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h3>
+<p>Maintain the flow of water at the outlet of the stormwater network below <span class="math notranslate nohighlight">\(0.5 m^3s^{-1}\)</span>.
+The degree of success or failure of the algorithm to achieve the objective is computed based on the following metric.</p>
+</section>
+<section id="states">
+<h3>States<a class="headerlink" href="#states" title="Permalink to this headline">#</a></h3>
+<p>Water levels (<span class="math notranslate nohighlight">\(m\)</span>) in the two basins at every step, indexed by the order of the basin are
+defined as the states in this scenario.</p>
+</section>
+<section id="control-actions">
+<h3>Control actions<a class="headerlink" href="#control-actions" title="Permalink to this headline">#</a></h3>
+<p>Percent of valve opening <span class="math notranslate nohighlight">\([0,1]\)</span> at the outlet of each basin.</p>
+</section>
+<section id="example-equal-filling-controller">
+<h3>Example: Equal-filling Controller<a class="headerlink" href="#example-equal-filling-controller" title="Permalink to this headline">#</a></h3>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pystorms</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> notebook
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">pystorms</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">theta</span><span class="p">()</span>
+<span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
+    <span class="n">done</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Uncontrolled Performance : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">performance</span><span class="p">()))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Uncontrolled</span> <span class="n">Performance</span> <span class="p">:</span> <span class="mf">0.1296391721430919</span>
+</pre></div>
+</div>
+<p><strong>Lets take a look at the network outflows in the uncontrolled
+response</strong></p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">data_log</span><span class="p">[</span><span class="s2">&quot;flow&quot;</span><span class="p">][</span><span class="s2">&quot;8&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Outflows&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;Outflows&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/theta_uncontrolled.png" src="_images/theta_uncontrolled.png" />
+<p>Now, lets see if we can design a control algorithm to maintain the
+flows below <span class="math notranslate nohighlight">\(0.5 m^3s^{-1}\)</span></p>
+<p>Design of such a control algorithm can be approached in many ways. But
+the fundamental idea behind any of these algorithms would be to hold
+back water in the basins and coordinate the actions of these basin such
+that their cumulative outflows are below the desired threshold. In this
+example, we will design a simple algorithm that achieves this.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">controller</span><span class="p">(</span><span class="n">depths</span><span class="p">,</span>
+               <span class="n">N</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+               <span class="n">LAMBDA</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+               <span class="n">MAX_DEPTH</span><span class="o">=</span><span class="mf">2.0</span><span class="p">):</span>
+
+    <span class="c1"># Compute the filling degree</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">depths</span><span class="o">/</span><span class="n">MAX_DEPTH</span>
+
+    <span class="c1"># Estimate the average filling degree</span>
+    <span class="n">f_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+    <span class="c1"># Compute psi</span>
+    <span class="n">psi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+        <span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">f_mean</span>
+        <span class="k">if</span> <span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.0</span> <span class="o">-</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">):</span>
+            <span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">elif</span> <span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.0</span> <span class="o">-</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span> <span class="ow">and</span> <span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">0.0</span> <span class="o">+</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">):</span>
+            <span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">f_mean</span>
+
+    <span class="c1"># Assign valve positions</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">depths</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mf">9.81</span> <span class="o">*</span> <span class="n">depths</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">action</span> <span class="o">=</span> <span class="n">k</span> <span class="o">*</span> <span class="n">LAMBDA</span> <span class="o">*</span> <span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span>
+            <span class="n">actions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">actions</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">env_controlled</span> <span class="o">=</span> <span class="n">pystorms</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">theta</span><span class="p">()</span>
+<span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">env_controlled</span><span class="o">.</span><span class="n">state</span><span class="p">()</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">controller</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">)</span>
+    <span class="n">done</span> <span class="o">=</span> <span class="n">env_controlled</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">actions</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">env_controlled</span><span class="o">.</span><span class="n">data_log</span><span class="p">[</span><span class="s2">&quot;flow&quot;</span><span class="p">][</span><span class="s2">&quot;8&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Controlled&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">data_log</span><span class="p">[</span><span class="s2">&quot;flow&quot;</span><span class="p">][</span><span class="s2">&quot;8&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Uncontrolled&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Outflows&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/theta_controlled.png" src="_images/theta_controlled.png" />
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Controlled performance: </span><span class="si">{}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">Uncontrolled performance: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">env_controlled</span><span class="o">.</span><span class="n">performance</span><span class="p">(),</span> <span class="n">env</span><span class="o">.</span><span class="n">performance</span><span class="p">()))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Controlled</span> <span class="n">performance</span><span class="p">:</span> <span class="mf">0.0</span>
+<span class="n">Uncontrolled</span> <span class="n">performance</span><span class="p">:</span> <span class="mf">0.1296391721430919</span>
+</pre></div>
+</div>
+<p>Controller is able to maintain the outflows from the network below the desired threshold.</p>
+</section>
+</section>
+</section>
 
 
               </div>
@@ -224,17 +420,17 @@
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="GettingStarted.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="getting_started.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to the <code class="docutils literal notranslate"><span class="pre">pystorms</span></code></p>
+            <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">pystorms</span></code></p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Development.html" title="next page">
+    <a class='right-next' id="next-link" href="building_scenarios.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Building Custom Scenarios</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -253,7 +449,7 @@
     
     <div class="footer-item">
       <p class="copyright">
-    &copy; Copyright 2049.<br>
+    &copy; Copyright 2022.<br>
 </p>
     </div>
     

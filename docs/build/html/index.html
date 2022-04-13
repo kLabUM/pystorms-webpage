@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Welcome to pystorms documentation! &#8212; pystorms 0.6.0 documentation</title>
+    <title>&lt;no title&gt; &#8212; pystorms 1.0.0 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -31,9 +31,9 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="pystorms" href="GettingStarted.html" />
+    <link rel="next" title="pystorms" href="getting_started.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -67,7 +67,7 @@
       <div class="navbar-center-item">
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="GettingStarted.html">
+ <a class="reference internal nav-link" href="getting_started.html">
   <code class="docutils literal notranslate">
    <span class="pre">
     pystorms
@@ -77,8 +77,26 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="Scenarios.html">
+ <a class="reference internal nav-link" href="scenarios.html">
   Scenarios
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="building_scenarios.html">
+  Building Custom Scenarios
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="advanced.html">
+  Advanced
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="contributing.html">
+  Contributing
  </a>
 </li>
 
@@ -95,6 +113,10 @@
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/kLabUM/pystorms" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
             <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://pypi.org/project/pystorms/" rel="noopener" target="_blank" title="PyPI"><span><i class="fas fa-box"></i></span>
+            <label class="sr-only">PyPI</label></a>
         </li>
       </ul>
       </div>
@@ -132,30 +154,9 @@
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage mt-5 pt-1 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
 
 <nav id="bd-toc-nav">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Welcome to
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     pystorms
-    </span>
-   </code>
-   documentation!
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#indices-and-tables">
-   Indices and tables
-  </a>
- </li>
-</ul>
-
+    
 </nav>
               </div>
               
@@ -175,23 +176,45 @@
               
               <div>
                 
-  <section id="welcome-to-pystorms-documentation">
-<h1>Welcome to <code class="docutils literal notranslate"><span class="pre">pystorms</span></code> documentation!<a class="headerlink" href="#welcome-to-pystorms-documentation" title="Permalink to this headline">#</a></h1>
-<div class="toctree-wrapper compound">
+  <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html"><code class="docutils literal notranslate"><span class="pre">pystorms</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Scenarios.html">Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html"><code class="docutils literal notranslate"><span class="pre">pystorms</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#citation">Citation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scenarios.html">Scenarios</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scenarios.html#scenarios-in-pystorms">Scenarios in <code class="docutils literal notranslate"><span class="pre">pystorms</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="scenarios.html#jupyter-notebooks">Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scenarios.html#example-scenario-theta">Example: Scenario Theta</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="building_scenarios.html">Building Custom Scenarios</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="building_scenarios.html#anonymize-the-stormwater-network">Anonymize the stormwater network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_scenarios.html#event-driver">Event driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_scenarios.html#control-objective-and-performance-metric">Control objective and performance metric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_scenarios.html#choose-the-state-and-action-space">Choose the state and action space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_scenarios.html#building-pystorms-scenario-class">Building <code class="docutils literal notranslate"><span class="pre">pystorms</span></code> scenario class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#multi-processing">Multi-processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#pyswmm-functionality"><code class="docutils literal notranslate"><span class="pre">pyswmm</span></code> functionality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#defining-states">Defining States</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#steps-for-contributing">Steps for contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#addressing-bug-fix">Addressing bug fix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#testing">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#details-on-where-to-include-what">Details on where to include what</a></li>
+</ul>
+</li>
 </ul>
 </div>
-</section>
-<section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">#</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
-</ul>
-</section>
 
 
               </div>
@@ -199,7 +222,7 @@
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="GettingStarted.html" title="next page">
+    <a class='right-next' id="next-link" href="getting_started.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">pystorms</span></code></p>
@@ -221,7 +244,7 @@
     
     <div class="footer-item">
       <p class="copyright">
-    &copy; Copyright 2049.<br>
+    &copy; Copyright 2022.<br>
 </p>
     </div>
     
